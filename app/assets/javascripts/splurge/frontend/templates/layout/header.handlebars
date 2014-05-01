@@ -1,0 +1,53 @@
+<header>
+
+  <section class="branding">
+    <h2>The Codelation Store</h2>
+  </section>
+
+  <section class="search-nav">
+    <div class="login">
+      <a href="#">Log in / Sign up</a>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search" />
+      <i class="search-button fa fa-arrow-circle-right"></i>
+    </div>
+
+    <div class="cart">
+      {{#link-to "cart"}}
+        <i class="fa fa-shopping-cart"></i>
+        0 Items - $0.00
+      {{/link-to}}
+    </div>
+  </section>
+
+  <nav>
+    <ul>
+      <li>
+        {{#link-to "index"}}
+          Home
+        {{/link-to}}
+      </li>
+
+      <li>
+        {{#link-to "products"}}
+          Shop Products
+        {{/link-to}}
+      </li>
+
+      <li>
+        {{#link-to "about"}}
+          About
+        {{/link-to}}
+      </li>
+
+      <li>
+        {{#link-to "contact"}}
+          Contact
+        {{/link-to}}
+      </li>
+    </ul>
+  </nav>
+
+</header>

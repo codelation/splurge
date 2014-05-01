@@ -1,0 +1,11 @@
+@import "splurge/bourbon";
+@import "splurge/variables";
+@import "splurge/neat";
+
+body.splurge main {
+  & > * {
+    @include outer-container;
+    display: block;
+    padding: 0 $base-font-size;
+  }
+}

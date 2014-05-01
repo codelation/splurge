@@ -1,0 +1,9 @@
+(function() {
+  "use strict";
+
+  App.Router.reopen({
+    rootURL: '<%= Splurge::Engine.routes.url_helpers.root_path %>',
+    location: 'history'
+  });
+
+})();

@@ -1,0 +1,32 @@
+(function() {
+  "use strict";
+
+  App.ApplicationController = Ember.ObjectController.extend({
+    currentController: null,
+    siteName: '<%= Spree::Config.site_name %>',
+
+    currentPathDidChange: function() {
+      var currentPath = this.get('currentPath'),
+          currentController = this.container.lookup('controller:' + currentPath);
+
+      // Track current controller
+      this.set('currentController', currentController);
+
+      // Set the body class based on route
+      var bodyClass = 'ember-application splurge frontend ' + currentPath.split('.').join(' ');
+      $('body').attr('class', bodyClass);
+    }.observes('currentPath'),
+
+    currentControllerPageTitleDidChange: function() {
+      var pageTitle = this.get('currentController.pageTitle'),
+          siteName = this.get('siteName');
+
+      if (Ember.isEmpty(pageTitle)) {
+        document.title = siteName;
+      } else {
+        document.title = pageTitle + ' | ' + siteName;
+      }
+    }.observes('currentController.pageTitle')
+  });
+
+})();

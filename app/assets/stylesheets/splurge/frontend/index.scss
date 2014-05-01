@@ -1,0 +1,101 @@
+@import "splurge/bourbon";
+@import "splurge/variables";
+@import "splurge/neat";
+
+body.splurge.index main .featured-image {
+  padding: 1em 0 0;
+}
+
+body.splurge.index main .featured-text {
+  border-bottom: 1px solid $dark-border-color;
+  padding-bottom: 1em;
+  text-align: center;
+
+  & > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+
+    @include media($mobile) {
+      max-width: none;
+    }
+  }
+
+  h1 {
+    margin-bottom: 0.4em;
+  }
+}
+
+body.splurge.index main .featured-products {
+  padding: 0;
+
+  & > * {
+    padding-left: $base-font-size;
+    padding-right: $base-font-size;
+  }
+}
+
+body.splurge.index main .featured-products h2 {
+  border-bottom: 1px solid $base-border-color;
+  font-family: $sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 0 0 1em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.splurge.index main .featured-products ul {
+  @include outer-container;
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    @include span-columns(3);
+    display: block;
+
+    &.omega {
+      @include omega;
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+    }
+  }
+
+  a {
+    display: block;
+    padding: 1em;
+    text-align: center;
+
+    img {
+      margin: 0 auto;
+      max-width: 90%;
+    }
+
+    h3 {
+      color: $base-link-color;
+      font-size: 18px;
+      @include transition(color 0.1s linear);
+    }
+
+    .price {
+      color: lighten($base-font-color, 5%);
+      font-family: $sans-serif;
+      font-size: 15px;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    &:hover {
+      h3 {
+        color: $hover-link-color;
+      }
+      .price {
+        color: $base-font-color;
+      }
+    }
+  }
+}

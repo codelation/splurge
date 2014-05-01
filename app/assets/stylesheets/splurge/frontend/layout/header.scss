@@ -1,0 +1,193 @@
+@import "splurge/bourbon";
+@import "splurge/variables";
+@import "splurge/neat";
+
+body.splurge header {
+  @include outer-container;
+  position: relative;
+
+  & > * {
+    padding: 0 $base-font-size;
+  }
+}
+
+// Top Navigation Menu
+body.splurge header .search-nav {
+  border-bottom: 1px solid $base-border-color;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  a {
+    display: inline-block;
+    font-family: $sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: $base-font-size;
+  }
+
+  .cart {
+    float: right;
+
+    a {
+      padding-right: 0;
+    }
+  }
+
+  .login {
+    left: 50%;
+    margin-left: -25%;
+    position: absolute;
+    top: 0;
+    width: 50%;
+
+    a {
+      font-family: $serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: normal;
+      font-style: italic;
+    }
+  }
+
+  .search {
+    float: left;
+  }
+
+  @include media($mobile) {
+    border-bottom: none;
+    position: relative;
+    top: auto;
+
+    .cart,
+    .login,
+    .search {
+      float: none;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .login {
+      left: auto;
+      margin-left: auto;
+      position: relative;
+      top: auto;
+      width: auto;
+    }
+
+    .search input {
+      text-align: center;
+    }
+  }
+}
+
+// Top Navigation Search
+body.splurge header .search-nav .search {
+  padding: $base-font-size $base-font-size $base-font-size 0;
+  position: relative;
+
+  input {
+    border: none;
+    border-bottom: 1px dotted darken($base-border-color, 5%);
+    border-radius: 0;
+    box-shadow: none;
+    font-family: $sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 0 1.5em 0.5em 0.5em;
+    width: 100%;
+    @include transition(border-color 0.1s linear);
+
+    &:focus {
+      border-color: $base-link-color;
+      box-shadow: none;
+    }
+  }
+
+  .search-button {
+    color: $base-border-color;
+    cursor: pointer;
+    height: 20px;
+    margin-top: -15px;
+    padding: 0 ($base-font-size / 2);
+    position: absolute;
+    right: $base-font-size / 2;
+    top: 50%;
+    @include transition(color 0.1s linear);
+  }
+
+  input:focus + .search-button {
+    color: $base-link-color;
+
+    &:hover {
+      color: $hover-link-color;
+    }
+  }
+}
+
+// Branding Section
+body.splurge header .branding {
+  padding: ($base-font-size * 5) $base-font-size ($base-font-size + 2px);
+  text-align: center;
+  vertical-align:bottom;
+
+  h2 {
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+  }
+
+  @include media($mobile) {
+    padding: ($base-font-size - 5px) $base-font-size 0;
+  }
+}
+
+// Main Navigation Menu
+body.splurge header nav {
+  border-bottom: 1px solid $dark-border-color;
+  border-top: 1px solid $dark-border-color;
+  position: relative;
+
+  &:before {
+    border-bottom: 1px solid $dark-border-color;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 -1em;
+    text-align: center;
+    @include clearfix;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    color: $base-font-color;
+    display: inline-block;
+    font-family: $sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 1.5em 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &.active {
+      color: $base-link-color;
+
+      &:hover {
+        color: $hover-link-color;
+      }
+    }
+  }
+}

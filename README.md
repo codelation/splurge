@@ -1,0 +1,3 @@
+# Splurge
+
+Spree + Ember.js

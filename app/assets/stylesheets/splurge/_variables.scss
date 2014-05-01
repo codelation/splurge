@@ -1,0 +1,47 @@
+@import "splurge/bourbon";
+@import "splurge/neat";
+
+// Typography
+$sans-serif: "News Cycle", $helvetica;
+$serif: "Neuton", $georgia;
+
+$base-font-family: $serif;
+$base-font-weight: 300;
+$heading-font-family: $base-font-family;
+$heading-font-weight: $base-font-weight;
+
+// Sizes
+$base-font-size: 18px;
+$base-line-height: 1.5em;
+$base-border-radius: 4px;
+$base-padding: 4px;
+
+// Body Color
+$base-body-color: #fff;
+
+// Font Colors
+$base-font-color: #5e5e5e;
+$base-accent-color: #55bec8;
+
+// Text Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 20%);
+
+// Border colors
+$base-border-color: #eee;
+$dark-border-color: darken($base-border-color, 10%);
+
+// Flash Colors
+$error-color: #fbe3e4;
+$notice-color: #fff6bf;
+$success-color: #e6efc2;
+
+// Admin Colors
+$admin-header-color: #444;
+$admin-header-accent-color: $base-accent-color;
+$admin-header-active-color: #fff;
+$admin-header-highlight-color: lighten($base-accent-color, 20%);
+
+// Viewports
+$max-width: 940px;
+$mobile: new-breakpoint(max-width 700px 4);

@@ -1,0 +1,33 @@
+@import "splurge/bourbon";
+@import "splurge/variables";
+
+body.splurge {
+  h1, h2, h3, h4, h5, h6 {
+    color: darken($base-font-color, 10%);
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+  }
+  h1 {
+    margin-bottom: 0.7em;
+  }
+  h2 {
+    font-weight: $heading-font-weight;
+    margin-bottom: 0.6em;
+  }
+  h3 {
+    font-weight: $heading-font-weight;
+    margin-bottom: 0.4em;
+  }
+  h4 {
+    font-weight: $heading-font-weight;
+    margin-bottom: 0.25em;
+  }
+  h5 {
+    font-weight: $heading-font-weight;
+    margin-bottom: 0.25em;
+  }
+  h6 {
+    font-weight: $heading-font-weight;
+    margin-bottom: 0.25em;
+  }
+}
